@@ -8,7 +8,7 @@ echo "La temperatura es: ".$temperatura." <br>La humedad es: ".$humedad;
 $usuario = "root";
 $contrasena = "";
 $servidor = "localhost";
-$basededatos = "tutoria";// เปลี่ยนเป็นชื่อฐานข้อมูล
+$basededatos = "esp32mysql";
 
 $conexion = mysqli_connect( $servidor, $usuario, "" ) or die ("No se ha podido conectar al servidor de Base de datos");
 
@@ -17,7 +17,7 @@ $db = mysqli_select_db( $conexion, $basededatos ) or die ( "No se ha podido sele
 //$num = time();
 //$consulta = "INSERT INTO datos ( temperatura, humedad) VALUES ( ".$temperatura.", ".$humedad.")";
 
-$consulta = "UPDATE datos  SET temperature='$temperatura', humidity = '$humedad' WHERE num = 1  "; //เปลี่ยนตลง datos เป็นชื่อตาราง
+$consulta = "UPDATE esp32mysql  SET temperature='$temperatura', humidity = '$humedad' WHERE num = 1  "; 
 $resultado = mysqli_query( $conexion, $consulta );
 
 ?>
